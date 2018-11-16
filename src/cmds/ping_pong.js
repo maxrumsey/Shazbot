@@ -1,4 +1,4 @@
-const builder = require('@maxrumsey/hangupsjs').MessageBuilder;
+const builder = require('@maxrumsey/hangupsjs-tokencopy').MessageBuilder;
 
 
 exports['loss'] = (msg) => {

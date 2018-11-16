@@ -2,8 +2,10 @@ if (!process.env.TOKEN) {
   let result = require('dotenv').config();
   if (result.error) throw result.error;
 }
-
-const Hangups = require('@maxrumsey/hangupsjs');
+if (process.env.RTOKEN) {
+  global.rtoken = process.env.RTOKEN;
+}
+const Hangups = require('@maxrumsey/hangupsjs-tokencopy');
 global.client = new Hangups()
 const modu = {
   chat: require('./src/chat.js'),

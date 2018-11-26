@@ -6,7 +6,7 @@ exports.prehandle = (msg, modu) => {
 };
 exports.handle = (msgObj, client) => {
   try {
-    const command = getCommand(msgObj.content);
+    const command = getCommand(msgObj);
     if (!command || (command == '')) return;
     if (!global.commands[command]) return;
     global.commands[command](msgObj, client);
@@ -45,7 +45,7 @@ class Message {
     client.sendchatmessage(this.channel, [[0, content]]);
   }
 }
-function getCommand(content) {
+function getCommand(msgObj) {
   let first = msgObj.content.split(' ')[0].split('');
   first.shift();
   let command = first.join('');

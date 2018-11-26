@@ -23,7 +23,6 @@ const credsfunc = async function() {
   };
 };
 client.on('chat_message', msg => {
-  console.log(msg);
   var msgObj;
   try {
     msgObj = modu.chat.prehandle(msg, modu);

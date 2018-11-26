@@ -3,18 +3,18 @@ exports.prehandle = (msg, modu) => {
   let msgObj = construct(msg, { prefix: modu.config.prefix, client: modu.client });
   if (msgObj.content.split('')[0] != msgObj.prefix) return;
   return msgObj;
-}
+};
 exports.handle = (msgObj, client) => {
   try {
-    const command = getCommand(msgObj.content)
+    const command = getCommand(msgObj.content);
     if (!command || (command == '')) return;
     if (!global.commands[command]) return;
-    global.commands[command](msgObj, client)
+    global.commands[command](msgObj, client);
   } catch (e) {
     console.log('Error Handling Message');
     console.log(e);
   }
-}
+};
 function check(evt) {
   if (global.shutdown == true) {
     if (evt.chat_message.message_content.segment[0].text != require('../config.json').prefix + 'owner:unmute') return;
@@ -30,7 +30,7 @@ function check(evt) {
   return true;
 }
 function construct(msg, extras) {
-  return msgObj = new Message(msg, extras);
+  return new Message(msg, extras);
 }
 class Message {
   constructor(msg, {prefix, client}) {

@@ -10,7 +10,8 @@
     "@maxrumsey/hangupsjs-tokencopy": "^1.3.8"
   },
   "devDependencies": {
-    "dotenv": "^6.1.0"
+    "dotenv": "^6.1.0",
+    "eslint": "^5.9.0"
   },
   "scripts": {
     "start": "node index.js --production",

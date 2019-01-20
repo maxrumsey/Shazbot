@@ -1,5 +1,5 @@
 exports['ping'] = (msg) => {
-  msg.reply('🏓 Pong! I\'m alive. 🙌\'');
+  msg.reply('🏓 Pong! I\'m alive. 🙌');
 };
 exports['version'] = (msg) => {
   const package = require('../../package.json');

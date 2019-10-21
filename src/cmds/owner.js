@@ -75,6 +75,7 @@ exports['owner:spam'] = (msg) => {
       } else {
         clearInterval(beanus);
       }
+      i = i + 1;
     }, 500);
   } else {
     msg.reply('No permission to issue this command.');
